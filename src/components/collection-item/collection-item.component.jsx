@@ -7,13 +7,13 @@ const Collectionitem = ({ id, name, price, imageUrl }) => (
     <div
       className='image'
       style={{
-        background: `url(${imageUrl})`
+        backgroundImage: `url(${imageUrl})`
       }}
     >
     </div>
     <div className='collection-footer'>
       <span className='name'>{name}</span>
-      <span className='name'>{price}</span>
+      <span className='price'>{price}</span>
     </div>
   </div>
 )
