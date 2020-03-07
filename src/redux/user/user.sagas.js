@@ -10,9 +10,9 @@ import {
   signInFailure,
   signInSuccess,
   signOutFailure,
-  signOutStart,
   signOutSuccess,
-  signUpFailure, signUpStart, signUpSuccess
+  signUpFailure,
+  signUpSuccess
 } from './user.actions';
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
