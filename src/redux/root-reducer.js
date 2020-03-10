@@ -10,7 +10,7 @@ import shopReducer from './shop/shop.reducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart'] // only reducer we want to persist; user is already handled by firestore
+  whitelist: ['cart']
 };
 
 const rootReducer = combineReducers({
