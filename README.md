@@ -1,5 +1,5 @@
-# react-context-lesson
-We are going to replace our local state management from redux to the new context API. This repository is our application before we introduced sagas to handle our asynchronous code, which is a good starting point to make the appropriate changes!
+# react-context-complete
+A complete version of our application converting everything redux over to using the contextAPI
 
 # How to fork and clone
 

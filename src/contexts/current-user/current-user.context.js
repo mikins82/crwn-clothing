@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const CurrentUserContext = createContext(undefined); // initial value
+const CurrentUserContext = createContext(undefined);
 
 export default CurrentUserContext;

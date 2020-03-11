@@ -15,29 +15,28 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import CurrentUserContext from './contexts/current-user/current-user.context';
 
 class App extends React.Component {
-
   constructor() {
     super();
 
     this.state = {
       currentUser: null
-    }
+    };
   }
 
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
-
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapShot => {
-          this.setState({ currentUser: {
-            id: snapShot.id,
-            ...snapShot.data()
-          }});
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          });
         });
       }
 
@@ -53,7 +52,7 @@ class App extends React.Component {
     return (
       <div>
         <CurrentUserContext.Provider value={this.state.currentUser}>
-          <Header/>
+          <Header />
         </CurrentUserContext.Provider>
         <Switch>
           <Route exact path='/' component={HomePage} />
