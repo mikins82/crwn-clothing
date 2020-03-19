@@ -6,16 +6,6 @@
   align-items: center;
   position: relative;
 
-  &:hover {
-    .image {
-      opacity: 0.8;
-    }
-    button {
-      opacity: 0.85;
-      display: flex;
-    }
-  }
-
   .image {
     width: 100%;
     height: 95%;
@@ -24,12 +14,23 @@
     margin-bottom: 5px;
   }
 
-  Custom-button {
+  .custom-button {
     width: 80%;
     opacity: 0.7;
     position: absolute;
     top: 255px;
     display: none;
+  }
+
+  &:hover {
+    .image {
+      opacity: 0.8;
+    }
+
+    .custom-button {
+      opacity: 0.85;
+      display: flex;
+    }
   }
 
   .collection-footer {
@@ -46,7 +47,6 @@
 
     .price {
       width: 10%;
-      text-align: right;
     }
   }
 }
