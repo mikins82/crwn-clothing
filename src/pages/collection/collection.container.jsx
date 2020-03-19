@@ -21,14 +21,14 @@ const GET_COLLECTION_BY_TITLE = gql`
 `;
 
 const CollectionPageContainer = ({ match }) => (
-  <Query query={GET_COLLECTION_BY_TITLE} variables={{ title: match.params.collectionId }}>
-    {
-      ({ loading, data }) => {
-        if (loading) return <Spinner/>;
-        const { getCollectionsByTitle } = data;
-        return <CollectionPage collection={getCollectionsByTitle} />
-      }
-    }
+  <Query
+    query={GET_COLLECTION_BY_TITLE}
+    variables={{ title: match.params.collectionId }}
+  >
+    {({ loading, data: { getCollectionsByTitle } }) => {
+      if (loading) return <Spinner />;
+      return <CollectionPage collection={getCollectionsByTitle} />;
+    }}
   </Query>
 );
 
